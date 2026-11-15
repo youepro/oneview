@@ -6,14 +6,19 @@ docs_dir: docs
 extra:
   generator: false
 
+extra_css:
+  - stylesheets/extra.css
+
 theme:
   name: material
   language: zh
   features:
+    - navigation.tabs
     - navigation.sections
     - navigation.expand
     - navigation.top
     - navigation.indexes
+    - toc.follow
     - search.suggest
     - search.highlight
     - content.code.copy
