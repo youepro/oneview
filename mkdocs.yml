@@ -1,10 +1,10 @@
 site_name: OneView 技术笔记
 site_description: 中间件、Java 后端、AI 技术框架知识库
 site_url: https://youepro.github.io/oneview/
-repo_url: https://github.com/youepro/oneview
-repo_name: youepro/oneview
-edit_uri: edit/doc/docs/
 docs_dir: docs
+
+extra:
+  generator: false
 
 theme:
   name: material
@@ -18,8 +18,6 @@ theme:
     - search.highlight
     - content.code.copy
     - content.tabs.link
-    - content.action.edit
-    - content.action.view
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default

@@ -81,7 +81,7 @@ mkdocs gh-deploy --force --remote-branch gh-pages
 
 - 发布后页面未更新：GitHub Pages 有约 10 分钟 CDN 缓存（`max-age=600`），强刷或加 `?v=时间戳` 访问
 - 不要直接修改 `gh-pages` 分支，每次部署会被覆盖
-- 页面右上角「编辑此页」会跳转到 `doc` 分支对应 md，可直接在线修改后提交
+- 在线编辑：直接访问仓库 `doc` 分支的 `docs/` 目录修改 md 后提交
 
 ## 分支说明
 
