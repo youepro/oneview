@@ -1,0 +1,6 @@
+title: Redis
+nav:
+  - 概览: index.md
+  - 数据类型: data-types.md
+  - 持久化: persistence.md
+  - 缓存设计: cache-design.md

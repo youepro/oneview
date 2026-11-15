@@ -1,27 +1,39 @@
 # OneView 技术笔记
 
-整理 Kafka、Redis 等后端技术的原理、实践与踩坑记录，按主题分册维护。
+沉淀中间件、Java 后端与 AI 技术框架的原理、实践和踩坑记录，按主题分册持续维护。
 
 ## 知识库
 
 <div class="grid cards" markdown>
 
--   :material-message-badge: __Kafka__
+-   :material-message-badge: __中间件__
 
-    消息队列、分区副本、消费者组与可靠性实践。
+    Kafka、Redis、RocketMQ、Elasticsearch、Nginx 等。
 
-    [:octicons-arrow-right-24: 进入 Kafka](kafka/index.md)
+    [:octicons-arrow-right-24: 进入中间件](middleware/index.md)
 
--   :material-database: __Redis__
+-   :material-language-java: __Java 后端__
 
-    数据结构、持久化、缓存设计与高可用。
+    JVM、并发、集合、Spring、微服务与 MySQL。
 
-    [:octicons-arrow-right-24: 进入 Redis](redis/index.md)
+    [:octicons-arrow-right-24: 进入 Java 后端](java/index.md)
+
+-   :material-robot: __AI 技术__
+
+    LLM、RAG、Agent、LangChain/LangGraph 与深度学习。
+
+    [:octicons-arrow-right-24: 进入 AI 技术](ai/index.md)
+
+-   :material-tools: __工程实践__
+
+    Git、Docker、Linux 与日常开发效率工具。
+
+    [:octicons-arrow-right-24: 进入工程实践](engineering/index.md)
 
 </div>
 
 ## 编写约定
 
-- 每类技术一个目录，入口为 `index.md`
-- 单个主题不超过一页，过长时拆分为子页面
+- 每类技术一个目录，入口为 `index.md`，子主题单独成页
+- 新增页面无需改配置，导航按目录自动生成（顺序在 `.pages` 中调整）
 - 代码块标注语言，方便复制与高亮
