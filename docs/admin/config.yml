@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: https://github/youepro/oneview
+  repo: youepro/oneview
   branch: main
   commit_message: "chore: update via CMS"
 
