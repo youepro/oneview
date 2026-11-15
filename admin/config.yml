@@ -1,0 +1,21 @@
+backend:
+  name: github
+  repo: https://github/youepro/oneview
+  branch: main
+  commit_message: "chore: update via CMS"
+
+media_folder: docs/images
+public_folder: /images
+
+collections:
+  - name: posts
+    label: 文章
+    folder: docs/posts
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: 标题, name: title, widget: string}
+      - {label: 日期, name: date, widget: datetime, format: YYYY-MM-DD}
+      - {label: 标签, name: tags, widget: list, required: false}
+      - {label: 摘要, name: description, widget: text, required: false}
+      - {label: 正文, name: body, widget: markdown}
