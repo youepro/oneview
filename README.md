@@ -33,6 +33,7 @@ pip install -r requirements.txt
 
 mkdocs serve            # 打开 http://127.0.0.1:8000 实时预览
 mkdocs build --clean    # 仅构建到 site/
+pkill -f "mkdocs serve"
 ```
 
 ## 发布流程
