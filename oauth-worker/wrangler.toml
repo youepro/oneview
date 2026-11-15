@@ -1,0 +1,6 @@
+name = "oneview-oauth"
+main = "src/index.js"
+compatibility_date = "2025-01-01"
+
+[vars]
+ALLOWED_DOMAINS = "oneview.honeyoue.workers.dev"
