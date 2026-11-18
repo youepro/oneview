@@ -119,6 +119,12 @@ class node_connect,node_transforms,node_streams,node_mirror toneMint
 class node_storagecli toneRose
 class node_metrics,node_ssl,node_uuid,node_time,node_topic,node_errors toneIndigo
 ```
+## 交互演示
+
+点击下面的按钮，观察事件如何依次经过 **Producer → Topic/Partition → Consumer → Processing/Management**：
+
+<div id="kafka-demo"></div>
+
 ## 基本组成
 
 - **Producer / Consumer**：生产与消费客户端

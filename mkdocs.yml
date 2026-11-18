@@ -8,6 +8,10 @@ extra:
 
 extra_css:
   - stylesheets/extra.css
+  - stylesheets/kafka-demo.css
+
+extra_javascript:
+  - javascripts/kafka-demo.js
 
 theme:
   name: material

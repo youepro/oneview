@@ -1,0 +1,155 @@
+.kafka-demo {
+  --kd-border: var(--md-default-fg-color--lightest, #cbd5e1);
+  --kd-accent: #2563eb;
+  --kd-ok: #16a34a;
+  border: 1px solid var(--kd-border);
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1.25rem 0;
+  background: var(--md-code-bg-color, #f8fafc);
+  color: var(--md-default-fg-color, #0f172a);
+}
+.kafka-demo__title {
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: .75rem;
+}
+.kafka-demo__controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  margin-bottom: 1rem;
+}
+.kafka-demo button {
+  border: 1px solid var(--kd-border);
+  background: var(--md-default-bg-color, #ffffff);
+  color: inherit;
+  border-radius: 6px;
+  padding: .4rem .75rem;
+  cursor: pointer;
+  font-size: .85rem;
+}
+.kafka-demo button:hover {
+  border-color: var(--kd-accent);
+  color: var(--kd-accent);
+}
+.kafka-demo button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+.kafka-demo__pipeline {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: .35rem;
+  margin-bottom: 1rem;
+}
+.kafka-demo__stage {
+  flex: 1 1 150px;
+  border: 1px solid var(--kd-border);
+  border-radius: 8px;
+  padding: .6rem;
+  text-align: center;
+  transition: border-color .2s, box-shadow .2s, transform .2s;
+  background: var(--md-default-bg-color, #ffffff);
+}
+.kafka-demo__stage.is-active {
+  border-color: var(--kd-ok);
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, .18);
+  transform: translateY(-2px);
+}
+.kafka-demo__stage-icon {
+  width: 1.7rem;
+  height: 1.7rem;
+  line-height: 1.7rem;
+  border-radius: 50%;
+  margin: 0 auto .35rem;
+  background: var(--kd-accent);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: .8rem;
+}
+.kafka-demo__stage-name {
+  font-weight: 700;
+  font-size: .85rem;
+}
+.kafka-demo__stage-desc {
+  font-size: .75rem;
+  opacity: .8;
+  margin-top: .2rem;
+}
+.kafka-demo__arrow {
+  align-self: center;
+  font-size: 1.2rem;
+  color: var(--kd-accent);
+}
+.kafka-demo__tokens {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem;
+  justify-content: center;
+  margin-top: .4rem;
+}
+.kafka-demo__token {
+  font-size: .7rem;
+  padding: .1rem .35rem;
+  border-radius: 999px;
+  background: #dbeafe;
+  color: #1e3a8a;
+}
+.kafka-demo__panels {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: .75rem;
+  margin-bottom: .75rem;
+}
+.kafka-demo__metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .4rem;
+}
+.kafka-demo__metrics div {
+  border: 1px solid var(--kd-border);
+  border-radius: 6px;
+  padding: .35rem .5rem;
+  text-align: center;
+}
+.kafka-demo__metrics span {
+  display: block;
+  font-size: .7rem;
+  opacity: .75;
+}
+.kafka-demo__metrics strong {
+  font-size: 1.1rem;
+}
+.kafka-demo__panel-label {
+  font-size: .75rem;
+  font-weight: 700;
+  opacity: .8;
+  margin-bottom: .3rem;
+}
+.kafka-demo__current {
+  border: 1px solid var(--kd-border);
+  border-radius: 6px;
+  padding: .35rem .5rem;
+}
+.kafka-demo__current-value {
+  font-size: .85rem;
+  line-height: 1.5;
+}
+.kafka-demo__log {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: .78rem;
+  background: #0f172a;
+  color: #e2e8f0;
+  padding: .6rem;
+  border-radius: 6px;
+  max-height: 150px;
+  overflow: auto;
+  white-space: pre-wrap;
+}
+@media screen and (max-width: 60em) {
+  .kafka-demo__panels { grid-template-columns: 1fr; }
+  .kafka-demo__pipeline { flex-direction: column; }
+  .kafka-demo__arrow { transform: rotate(90deg); align-self: center; }
+}
