@@ -55,6 +55,8 @@
     
       <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="../../../stylesheets/kafka-demo.css">
+    
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -644,7 +646,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        基本组成
+        交互演示
       
     </span>
   </a>
@@ -655,7 +657,7 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        副本机制
+        基本组成
       
     </span>
   </a>
@@ -666,7 +668,7 @@
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        读写流程
+        副本机制
       
     </span>
   </a>
@@ -675,6 +677,17 @@
       
         <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        读写流程
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
         待补充
@@ -2726,7 +2739,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        基本组成
+        交互演示
       
     </span>
   </a>
@@ -2737,7 +2750,7 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        副本机制
+        基本组成
       
     </span>
   </a>
@@ -2748,7 +2761,7 @@
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        读写流程
+        副本机制
       
     </span>
   </a>
@@ -2757,6 +2770,17 @@
       
         <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        读写流程
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
         待补充
@@ -2899,14 +2923,18 @@ class node_broker,node_replication,node_groupsvc,node_groupstate,node_sharesvc,n
 class node_connect,node_transforms,node_streams,node_mirror toneMint
 class node_storagecli toneRose
 class node_metrics,node_ssl,node_uuid,node_time,node_topic,node_errors toneIndigo</code></pre>
-<h2 id="_3">基本组成<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_3">交互演示<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>点击下面的按钮，观察事件如何依次经过 <strong>Producer → Topic/Partition → Consumer → Processing/Management</strong>：</p>
+<div id="kafka-demo"></div>
+
+<h2 id="_4">基本组成<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Producer / Consumer</strong>：生产与消费客户端</li>
 <li><strong>Broker</strong>：消息存储与转发节点</li>
 <li><strong>Controller</strong>：负责分区 Leader 选举与集群元数据管理</li>
 <li><strong>Topic → Partition → Segment</strong>：主题拆分为有序分区，分区再按段落盘</li>
 </ul>
-<h2 id="_4">副本机制<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_5">副本机制<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -2934,11 +2962,11 @@ class node_metrics,node_ssl,node_uuid,node_time,node_topic,node_errors toneIndig
 <li><code>LEO</code>（Log End Offset）：每个副本最后一条消息的位移</li>
 <li>只有 ISR 中的副本才有资格被选为 Leader</li>
 </ul>
-<h2 id="_5">读写流程<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_6">读写流程<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Producer → 按 key/轮询选择分区 → 追加到 Leader 日志
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Consumer → 按分区顺序拉取 → 维护自身 offset
 </code></pre></div>
-<h2 id="_6">待补充<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_7">待补充<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <ul>
 <li>ISR 收缩与 <code>replica.lag.time.max.ms</code></li>
 <li>Controller 故障转移</li>
@@ -3000,6 +3028,8 @@ class node_metrics,node_ssl,node_uuid,node_time,node_topic,node_errors toneIndig
     
     
       <script src="../../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+        <script src="../../../javascripts/kafka-demo.js"></script>
       
     
   </body>
